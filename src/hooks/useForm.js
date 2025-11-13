@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function UseForm(initialValue){
+export function useForm(initialValue){
     const[user,setUser] = useState({initialState:{}})
    
     const handleReset = (event) => {
@@ -24,7 +24,6 @@ export function UseForm(initialValue){
         user,
         setUser,
         handleChange,
-        handleForm,
         handleReset,
     }
 }
