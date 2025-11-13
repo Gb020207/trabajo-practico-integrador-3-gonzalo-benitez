@@ -1,30 +1,28 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
 export function UseForm(initialValue){
     const[user,setUser] = useState({initialState:{}})
-    const navigate = useNavigate();
+   
     const handleReset = (event) => {
         setUser(initialValue)
     }
-    const handleForm = (event) => {
-        event.preventDefault();
-        console.log("Se envio el formulario",user)
-        localStorage.setItem("userData",JSON.stringify(user));
-        handleReset();
-        navigate("/login")
-
-    }
+    
     const handleChange = (event) => {
-        const {name,value} = event.target
-
+        const {name,value,type,checked} = event.target
+        const newUser = type === "checkbox" ? checked : value;
+        setUser((prevUser) => ({...prevUser, [name]:newUser}))
+        // evita la "race condition" 
+        // La "Race condition" ocurre cuando dos o mas procesos intentan acceder
+        // y modificar el mismo campo compartido al mismo tiempo causando que 
+        // el resultado final dependa de que peticion se ejecute antes 
         setUser({
             ...user,
-            [name]:value
+            [name]:newUser
         })
     }
     return{
         user,
+        setUser,
         handleChange,
         handleForm,
         handleReset,
