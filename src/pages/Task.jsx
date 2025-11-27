@@ -93,7 +93,7 @@ export const Tasks = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify(values),
+        body: JSON.stringify(user),
       });
       if (res.ok) {
         alert("¡Tarea creada exitosamente!");
@@ -120,7 +120,7 @@ export const Tasks = () => {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
-        body: JSON.stringify(values),
+        body: JSON.stringify(user),
       });
 
       if (res.ok) {
