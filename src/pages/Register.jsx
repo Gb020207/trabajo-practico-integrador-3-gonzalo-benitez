@@ -18,6 +18,7 @@ export function Register({ onLoginSuccess }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
+
     const usuario = {
       name: user.firstname,
       lastname: user.lastname,
@@ -112,6 +113,7 @@ export function Register({ onLoginSuccess }) {
             onChange={handleChange}
             disabled={loading}
           />
+          <button type="submit">Registrarse </button>
         </form>
       </main>
       <p>Ya tienes una cuenta? {""}</p>

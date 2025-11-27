@@ -21,7 +21,7 @@ export function useForm(initialValue){
         })
     }
     return{
-        user,
+        user ,
         setUser,
         handleChange,
         handleReset,

@@ -11,7 +11,7 @@ export const Login = ({onLoginSuccess}) =>{
     })
     useForm;
     const [loading,setLoading] = useState(false)
-    const handleLogin = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
         try {
@@ -43,7 +43,7 @@ export const Login = ({onLoginSuccess}) =>{
         <>
             <main>
                 {loading && <Loading/>}
-                 <form onSubmit={handleLogin}>
+                 <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">
                     Username 

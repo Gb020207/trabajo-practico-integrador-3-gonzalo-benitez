@@ -1,0 +1,71 @@
+:root {
+  --verde-base: #2f855a;
+  --verde-claro: #c6f6d5;
+  --verde-oscuro: #22543d;
+  --fondo-suave: #f4fbf7;
+}
+
+/* Fondo general */
+body {
+  background: var(--fondo-suave);
+  color: var(--verde-oscuro);
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  color: var(--verde-oscuro);
+}
+
+/* Botones (aplicar solo si no tienen estilos propios) */
+button, .btn {
+  background-color: var(--verde-base);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 0.45rem 0.8rem;
+  transition: background 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--verde-oscuro);
+}
+
+/* Inputs */
+input, textarea, select {
+  border: 1px solid var(--verde-base);
+  border-radius: 6px;
+  padding: 0.4rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--verde-oscuro);
+  box-shadow: 0 0 4px rgba(47,133,90,0.3);
+}
+
+/* Tarjetas / Contenedores */
+.card, .panel, .box {
+  border-radius: 10px;
+  border: 1px solid rgba(47,133,90,0.25);
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Links */
+a {
+  color: var(--verde-base);
+}
+
+a:hover {
+  color: var(--verde-oscuro);
+}
+
+/* Tablas */
+table thead {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+}
+
+table tbody tr:nth-child(odd) {
+  background: rgba(47,133,90,0.05);
+}

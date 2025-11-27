@@ -1,7 +1,6 @@
 import { Navigate, Outlet } from "react-router"
 
 
-export const Public = () => {
-    isLogged = localStorage.getItem("token")
-    return !isLogged ? <Outlet/> : <Navigate to="/home"/>
+export const Public = ({authStatus}) => {
+    return authStatus === "authenticated" ? <Navigate to="/home"/>:<Outlet/>
 }
