@@ -12,11 +12,11 @@ export const Home = () =>{
     const Homedata = async () => {
        try {
          const userTask = fetch("http://localhost:3000/api/task",{
-            credentials:"include"
+            credentials:"include",
 
         })
         const userData = fetch("http://localhost:3000/api/profile",{
-            credentials:"include"
+            credentials:"include",
         })
 
         const [userRes,taskRes] = await Promise.all([
